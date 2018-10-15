@@ -24,8 +24,20 @@
 }
 
 .add-album {
+  position: relative;
   width: 15%;
   float: left;
+  img {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 0;
+    right: 0;
+    @media only screen and (max-width: 720px) {
+      width: 28px;
+      height: 28px;
+    }
+  }
 }
 
 .center {

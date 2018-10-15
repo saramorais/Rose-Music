@@ -25,5 +25,15 @@
       text-align: right;
     }
   }
+  .add-icon {
+    float: right;
+    width: 36px;
+    height: 36px;
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 7px;
+    }
+  }
 }
 

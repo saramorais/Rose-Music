@@ -8,6 +8,8 @@ import { saveAlbum } from '../../../redux/actions';
 
 import { connect } from 'react-redux';
 
+import AddIcon from '../../../../assets/images/add.png';
+
 import './App.css';
 
 class App extends PureComponent {
@@ -34,8 +36,8 @@ class App extends PureComponent {
             <div className='album-result'>
               <Album album={result} />
             </div>
-            <div className='add-album'>
-              <p onClick={() => this.albumSave(result)} className='add'>ADD</p>
+            <div className='add-album' onClick={() => this.albumSave(result)}>
+              <img src={AddIcon} />
             </div>
           </div>
         )
