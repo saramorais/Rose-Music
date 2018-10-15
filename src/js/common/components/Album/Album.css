@@ -1,0 +1,26 @@
+.albums-box {
+  position: relative;
+  width: 96%;
+  margin: 2%;
+}
+
+.image-box {
+  width: 35%;
+  float: left;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.album-info {
+  float: left;
+  width: 65%;
+  padding: 0 5px;
+  box-sizing: border-box;
+  p {
+    font-size: 14px;
+    margin: 5px;
+  }
+}
+

@@ -6,6 +6,8 @@ import {
   createStore,
 } from 'redux';
 
+import promise from 'redux-promise';
+
 import sagas from './sagas';
 import rootReducer from './rootReducers';
 
@@ -18,7 +20,7 @@ const reduxDevTool = () => {
 export default function configureStore(initialState, history) {
   const sagaMiddleware = createSagaMiddleware();
 
-  const middleware = applyMiddleware(sagaMiddleware, routerMiddleware(history));
+  const middleware = applyMiddleware(sagaMiddleware, routerMiddleware(history), promise);
 
   const composedStoreEnhancer = compose(middleware, reduxDevTool());
 

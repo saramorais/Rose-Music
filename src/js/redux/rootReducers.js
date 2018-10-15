@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-import example from './modules/example';
+import app from './modules/app';
+
+import reducer from './reducers/reducer'
 
 export default combineReducers({
-  example,
+  app,
   routing,
+  reducer
 });

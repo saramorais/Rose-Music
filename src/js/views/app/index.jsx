@@ -4,30 +4,30 @@ import { connect } from 'react-redux';
 import Loadable from 'react-loadable';
 
 import LazyLoading from '../../common/components/LazyLoading/LazyLoading'
-import { actions as exampleActions } from '../../redux/modules/example';
-import { exampleSelector } from '../../redux/selectors/exampleSelector';
-import { ExampleWithError } from '../../common/components/Example';
+import { actions as appActions } from '../../redux/modules/app';
+import { appSelector } from '../../redux/selectors/appSelector';
+import { AppWithError } from '../../common/components/App';
 import { ErrorBoundary } from '../../common/components/Utilities';
 
 require('../../../style/index.css');
 
-const LazyExample = Loadable({
-  loader: () => import('../../common/components/Example/Example'),
+const LazyApp = Loadable({
+  loader: () => import('../../common/components/App/App'),
   loading: LazyLoading,
 })
 
 const mapStateToProps = state => ({
-  example: exampleSelector(state),
+  app: appSelector(state),
 });
 
 const mapDispatchToProps = {
-  ...exampleActions,
+  ...appActions,
 };
 
 @connect(mapStateToProps, mapDispatchToProps)
-class ExampleView extends Component {
+class AppView extends Component {
   static propTypes = {
-    example: PropTypes.object.isRequired,
+    app: PropTypes.object.isRequired,
   }
 
   componentDidMount() {
@@ -37,13 +37,13 @@ class ExampleView extends Component {
   render() {
     return (
       <Fragment>
-        <LazyExample {...this.props} />
+        <LazyApp {...this.props} />
         <ErrorBoundary>
-          <ExampleWithError {...this.props} />
+          <AppWithError {...this.props} />
         </ErrorBoundary>
       </Fragment>
     )
   }
 }
 
-export default ExampleView;
+export default AppView;

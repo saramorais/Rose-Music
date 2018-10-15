@@ -5,28 +5,12 @@ import './Header.css';
 
 class Header extends PureComponent {
   render() {
-    const { pathname } = this.props.location;
-
-    const isHome = pathname === '/';
-    const isJustAnotherPage = pathname === '/page';
-
     return (
       <header className="globalHeader">
-        <ul>
-          <li className={!isHome ? 'active' : ''}>
-            {
-              isHome ?
-                'Home' : <Link to="/">Home</Link>
-
-            }
-          </li>
-          <li className={!isJustAnotherPage ? 'active' : ''}>
-            {
-              isJustAnotherPage ?
-                'Just Another Page' : <Link to="/page">Just Another Page</Link>
-            }
-          </li>
-        </ul>
+        <div className='headerItems'>
+          <p>Homework</p>
+          <p>ADD</p>
+        </div>
       </header>
     );
   }

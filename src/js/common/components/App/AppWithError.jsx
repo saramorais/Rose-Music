@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
 
-import './Example.css';
+import './App.css';
 
-class ExampleWithError extends PureComponent {
+class AppWithError extends PureComponent {
   render() {
-    const { example } = this.props;
-    const result = example && example.result ? example.result : null;
+    const { app } = this.props;
+    const result = app && app.result ? app.result : null;
 
     if (result && result.size && result.size > 0) {
       return (
-        <div className="exampleOutput">
+        <div className="appOutput">
           <h1>This should catch by ErrorBoundary</h1>
           {result.something_not_existed.get('something_not_existed')}
         </div>
@@ -19,4 +19,4 @@ class ExampleWithError extends PureComponent {
   }
 }
 
-export default ExampleWithError;
+export default AppWithError;

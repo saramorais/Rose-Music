@@ -1,29 +1,29 @@
 import { createAction, handleActions } from 'redux-actions';
 import { Map } from 'immutable';
 
-import type { exampleType } from '../../common/types/example'
+// import type { appType } from '../../common/types/app'
 
-const GET_EXAMPLE = 'app/example/GET_EXAMPLE';
-const UPDATE_EXAMPLE = 'app/example/UPDATE_EXAMPLE';
+const GET_APP = 'app/app/GET_APP';
+const UPDATE_APP = 'app/app/UPDATE_APP';
 
 export const constants = {
-  GET_EXAMPLE,
-  UPDATE_EXAMPLE,
+  GET_APP,
+  UPDATE_APP,
 };
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const getAwesomeCode = createAction(GET_EXAMPLE, () => ({}));
-export const updateExample = createAction(UPDATE_EXAMPLE, (result : exampleType) => ({ result }));
+export const getAwesomeCode = createAction(GET_APP, () => ({}));
+export const updateApp = createAction( (result) => ({ result }) );
 
 export const actions = {
   getAwesomeCode,
-  updateExample,
+  updateApp,
 };
 
 export const reducers = {
-  [UPDATE_EXAMPLE]: (state, { payload }) =>
+  [UPDATE_APP]: (state, { payload }) =>
     state.merge({
       ...payload,
     }),

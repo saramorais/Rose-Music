@@ -1,0 +1,20 @@
+.saved-title {
+  width: 50%;
+  margin: 50px auto 0;
+  @media only screen and (max-width: 720px) {
+    width: 94%;
+  }
+}
+
+.saved-result {
+  width: 100%;
+  float: left;
+
+  .image-box {
+    width: 30%;
+  }
+
+  .album-info {
+    width: 70%;
+  }
+}
