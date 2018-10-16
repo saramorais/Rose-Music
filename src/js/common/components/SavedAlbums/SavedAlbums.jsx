@@ -10,12 +10,23 @@ class SavedAlbums extends PureComponent {
       limit: 3
     }
     this.loadMore = this.loadMore.bind(this);
+    this.showLoadBtn = this.showLoadBtn.bind(this);
   }
 
   loadMore() {
     this.setState({
       limit: this.state.limit + 3
     });
+  }
+
+  showLoadBtn() {
+    if (this.props.result.length > this.state.limit) {
+      return (
+        <div className='button'>
+          <button onClick={this.loadMore}>LOAD MORE</button>
+        </div>
+      ) 
+    }
   }
 
   showAlbums() {
@@ -40,9 +51,7 @@ class SavedAlbums extends PureComponent {
       <div>
         <p className='saved-title bold'>Miles’s Melodious Music Miscellany</p>
         {this.showAlbums()}
-        <div className='button'>
-          <button onClick={this.loadMore}>LOAD MORE</button>
-        </div>
+        {this.showLoadBtn()}
       </div>
     )
   }
