@@ -25,10 +25,11 @@
       text-align: right;
     }
   }
-  .add-icon {
+  .show-search {
     float: right;
     width: 36px;
     height: 36px;
+    cursor: pointer;
     img {
       width: 100%;
       height: auto;

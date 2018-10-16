@@ -1,9 +1,9 @@
-import { FETCH_ALBUMS } from '../actions';
-import { SAVE_ALBUM } from '../actions';
+import { FETCH_ALBUMS, SAVE_ALBUM, TOGGLE_SEARCH } from '../actions';
 
 const initialState = {
   results: [],
-  savedAlbums: []
+  savedAlbums: [],
+  searchStatus: 'show-search'
 };
 
 const reducer = (state = initialState, action) => {
@@ -11,13 +11,19 @@ const reducer = (state = initialState, action) => {
     case FETCH_ALBUMS:
       return {
         ...state, 
-        results: action.payload.data.results 
+        results: action.payload.data.results,
+        searchStatus: 'hide-search'
       };
     case SAVE_ALBUM:
       return {
         ...state, 
         savedAlbums: action.saved
       };
+    case TOGGLE_SEARCH:
+      return {
+        ...state,
+        searchStatus: action.searchStatus
+      }
     default:
       return {...state};
   }

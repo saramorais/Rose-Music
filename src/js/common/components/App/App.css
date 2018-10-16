@@ -27,6 +27,7 @@
   position: relative;
   width: 15%;
   float: left;
+  cursor: pointer;
   img {
     position: absolute;
     width: 36px;
@@ -44,9 +45,12 @@
   text-align: center;
 }
 
-.add {
-  cursor: pointer;
+.hide-search {
+  display: none;
 }
 
+.show-search {
+  display: block;
+}
 
 
