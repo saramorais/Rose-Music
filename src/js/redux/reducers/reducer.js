@@ -11,8 +11,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_ALBUMS:
       return {
         ...state, 
-        results: action.payload.data.results,
-        searchStatus: 'hide-search'
+        results: action.payload.data.results
       };
     case SAVE_ALBUM:
       return {

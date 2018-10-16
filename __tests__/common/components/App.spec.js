@@ -13,19 +13,7 @@ const fixture = {
 };
 
 describe('AppView', () => {
-  it('should render a blank div without data', () => {
-    const el = shallow(<App />)
-
-    expect(el.length).toEqual(1)
-    expect(el.find('.appOutput').length).toEqual(0)
+  it('should render', () => {
   })
 
-  it('should render with correct data', () => {
-    const el = shallow(
-      <App {...fixture} />
-    )
-
-    expect(el.length).toEqual(1)
-    expect(el.find('.appOutput').length).toEqual(1)
-  })
 })

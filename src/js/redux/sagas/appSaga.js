@@ -1,7 +1,7 @@
 import { put, fork, takeLatest } from 'redux-saga/effects';
 import { constants as appConstants, actions as appActions } from '../modules/app';
 
-// import type { appType } from '../../common/types/app'
+import type { appType } from '../../common/types/app'
 
 export function* fetchAppData() {
   // pretend there is an api call
